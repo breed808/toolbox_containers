@@ -6,6 +6,6 @@ Toolbox Containerfile and Github actions config to automatically build personal 
 
 ```bash
 podman pull docker.io/breed808/toolbox:38
-toolbox create -i breed808/toolbox:38
+toolbox create -i docker.io/breed808/toolbox:38
 toolbox enter
 ```
