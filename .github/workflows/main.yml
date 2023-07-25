@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - Containerfile
+  schedule:
+    # Run container image build on first day of each month
+    - cron: '0 0 1 * *'
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
