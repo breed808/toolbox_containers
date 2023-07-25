@@ -1,4 +1,4 @@
-FROM fedora-toolbox:38
+FROM registry.fedoraproject.org/fedora-toolbox:38
 RUN dnf install -y \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-38.noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-38.noarch.rpm \
