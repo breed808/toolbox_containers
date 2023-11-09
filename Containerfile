@@ -7,7 +7,7 @@ RUN dnf install -y \
 RUN dnf copr enable -y breed808/general
 RUN dnf install -y \
     bat \
-    exa \
+    eza \
     dos2unix \
     fd-find \
     file \
