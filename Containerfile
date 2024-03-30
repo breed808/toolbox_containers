@@ -1,8 +1,9 @@
-FROM registry.fedoraproject.org/fedora-toolbox:39
+FROM registry.fedoraproject.org/fedora-toolbox:40
 RUN dnf install -y \
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm \
     && curl https://rpm.releases.hashicorp.com/fedora/hashicorp.repo -o /etc/yum.repos.d/hashicorp.repo \
+    && sed -i 's|\$releasever|39|g' /etc/yum.repos.d/hashicorp.repo \
     && dnf copr enable -y breed808/general && dnf clean all -y
 RUN dnf copr enable -y breed808/general
 RUN dnf install -y \
@@ -10,11 +11,9 @@ RUN dnf install -y \
     eza \
     dos2unix \
     fd-find \
-    file \
     fish \
     fzf \
     gcc-c++ \
-    git \
     git-delta \
     helm \
     hexyl \
@@ -28,7 +27,6 @@ RUN dnf install -y \
     kubernetes-client \
     ldns-utils \
     lnav \
-    mtr \
     neovim \
     nmap \
     nodejs-bash-language-server \
@@ -38,7 +36,6 @@ RUN dnf install -y \
     nvim-ale-python \
     nvim-ale-sh \
     nvim-ale-text \
-    packer \
     pinentry-tty \
     python3-lsp-server \
     python3-neovim \
