@@ -42,6 +42,7 @@ RUN dnf install -y \
     ripgrep \
     ruby \
     skopeo \
+    stow \
     terraform \
     terraform-ls \
     tokei \
