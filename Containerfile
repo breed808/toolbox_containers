@@ -1,7 +1,7 @@
-FROM registry.fedoraproject.org/fedora-toolbox:42
+FROM registry.fedoraproject.org/fedora-toolbox:43
 RUN dnf install -y \
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-43.noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm \
     && curl https://rpm.releases.hashicorp.com/fedora/hashicorp.repo -o /etc/yum.repos.d/hashicorp.repo \
     && dnf copr enable -y breed808/general && dnf clean all -y
 RUN dnf copr enable -y breed808/general
@@ -25,6 +25,7 @@ RUN dnf install -y \
     kubernetes-client \
     ldns-utils \
     lnav \
+    lua-language-server \
     neovim \
     nmap \
     nodejs-bash-language-server \
