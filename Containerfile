@@ -28,7 +28,8 @@ RUN dnf install -y \
     lua-language-server \
     neovim \
     nmap \
-    nodejs-bash-language-server \
+    nodejs-bash-language-server && dnf clean all -y
+RUN dnf install -y \
     nvim-ale-ansible \
     nvim-ale-dockerfile \
     nvim-ale-go \
