@@ -13,6 +13,7 @@ RUN dnf install -y \
     fzf \
     gcc-c++ \
     git-delta \
+    golangci-lint \
     helm \
     hexyl \
     htop \
