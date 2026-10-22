@@ -1,13 +1,13 @@
-FROM registry.fedoraproject.org/fedora-toolbox:43
+FROM registry.fedoraproject.org/fedora-toolbox:44
 RUN dnf install -y \
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-43.noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-44.noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-44.noarch.rpm \
     && curl https://rpm.releases.hashicorp.com/fedora/hashicorp.repo -o /etc/yum.repos.d/hashicorp.repo \
     && dnf copr enable -y breed808/general && dnf clean all -y
-RUN dnf copr enable -y breed808/general
 RUN dnf install -y \
     bat \
     dos2unix \
+    eza \
     fd-find \
     fish \
     fzf \
@@ -20,6 +20,7 @@ RUN dnf install -y \
     httpie \
     hyperfine \
     ipcalc \
+    jq \
     k9s \
     keychain \
     kitty-terminfo \
@@ -45,9 +46,9 @@ RUN dnf install -y \
     skopeo \
     stow \
     terraform \
-    terraform-ls \
     tokei \
     vivid \
     yaml-language-server \
     zstd \
     && dnf clean all -y
+RUN dnf upgrade -y && dnf clean all
